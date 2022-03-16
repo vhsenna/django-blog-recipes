@@ -30,6 +30,16 @@ h6 {
   padding-top: 0;
 }
 
+.main-content-detail .recipe-list-item {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.main-content-detail .recipe-list-item:hover {
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, .2);
+  transform: scale(1);
+}
+
 .main-content-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
