@@ -41,6 +41,16 @@
       padding: 30px;
     }
 
+    .main-content {
+      padding-top: 0;
+    }
+
+    .main-content-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 40px;
+    }
+
     .main-header-container {
       background-color: #13141F;
     }
@@ -86,7 +96,7 @@
       border-color: #269FE6;
     }
 
-    .search-form:focus-within .search-button {
+    .search-form:focus-within, .search-button {
       color: #269FE6;
     }
 
