@@ -31,8 +31,8 @@ h6 {
 }
 
 .main-content-detail .recipe-list-item {
-  max-width: 840px;
   margin: 0 auto;
+  max-width: 840px;
 }
 
 .main-content-detail .recipe-list-item:hover {
@@ -172,6 +172,11 @@ h6 {
 .recipe-title-container {
   padding: 30px;
   padding-bottom: 20px;
+}
+
+.recipe-title-container a {
+  color: #13141F;
+  text-decoration: none;
 }
 
 .search-button {
