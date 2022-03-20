@@ -1,11 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from utils.recipes.faker import make_recipe
+from recipes.models import Recipe
 
 # Create your views here.
 def home(request):
+    recipes = Recipe.objects.all().order_by('-id')
     return render(request, 'recipes/home.html', context={
-        'recipes': [make_recipe() for _ in range(13)],
+        'recipes': recipes,
     })
 
 def recipe(request, id):
