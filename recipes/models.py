@@ -8,6 +8,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Category'
+
 class Recipe(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
@@ -27,3 +31,7 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Recipe'
+        verbose_name_plural = 'Recipe'
