@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from utils.recipes.faker import make_recipe
 from recipes.models import Recipe
+from django.http import Http404
 
 # Create your views here.
 def home(request):
@@ -23,6 +24,10 @@ def category(request, category_id):
         category__id=category_id,
         is_published=True
     ).order_by('-id')
+
+    if not recipes:
+        raise Http404('Not found 🥲')
+
     return render(request, 'recipes/home.html', context={
         'recipes': recipes,
     })
