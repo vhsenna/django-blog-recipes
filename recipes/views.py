@@ -1,8 +1,6 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404
 from utils.recipes.faker import make_recipe
 from recipes.models import Recipe
-from django.http import Http404
 
 # Create your views here.
 def home(request):
@@ -20,13 +18,11 @@ def recipe(request, id):
     })
 
 def category(request, category_id):
-    recipes = Recipe.objects.filter(
+    recipes = get_list_or_404(Recipe.objects.filter(
         category__id=category_id,
-        is_published=True
-    ).order_by('-id')
-
-    if not recipes:
-        raise Http404('Not found 🥲')
+        is_published=True,
+        ).order_by('-id')
+    )
 
     return render(request, 'recipes/home.html', context={
         'recipes': recipes,
