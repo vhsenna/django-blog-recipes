@@ -10,6 +10,10 @@
 
       {% for recipe in recipes %}
       {% include 'recipes/base_recipe.html' %}
+      {% empty %}
+      <div class="center">
+        <h1>No recipes found 🥲</h1>
+      </div>
       {% endfor %}
 
     </div>

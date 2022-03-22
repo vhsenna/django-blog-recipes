@@ -20,6 +20,11 @@ h6 {
   font-family: 'Roboto Slab', serif;
 }
 
+.center {
+  text-align: center;
+  margin: 20px;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1440px;
