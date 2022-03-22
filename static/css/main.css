@@ -89,6 +89,11 @@ h6 {
   padding: 30px;
 }
 
+.preparation-steps ol, ul {
+  margin: 10 0px;
+  padding: 0 30px;
+}
+
 .recipe {
   background: #FFFFFF;
   border-radius: 4px;
