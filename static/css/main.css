@@ -31,6 +31,15 @@ h6 {
   padding: 30px;
 }
 
+.ingredients {
+  margin: 20px 0px;
+  padding: 0 30px;
+}
+
+.ingredients h3 {
+  padding-bottom: 15px;
+}
+
 .main-content {
   padding-top: 0;
 }
@@ -91,12 +100,17 @@ h6 {
 }
 
 .preparation-steps {
-  padding: 30px;
+  margin: 20px 0px;
+  padding: 0 30px;
 }
 
 .preparation-steps ol, ul {
-  margin: 10 0px;
+  margin: 20px 0px;
   padding: 0 30px;
+}
+
+.preparation-steps h3 {
+  padding-bottom: 15px;
 }
 
 .recipe {
@@ -128,7 +142,7 @@ h6 {
 }
 
 .recipe-content {
-  padding: 30px;
+  padding: 20px 30px 20px;
   padding-top: 20px;
 }
 

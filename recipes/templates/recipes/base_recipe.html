@@ -27,7 +27,7 @@
     {% endif %}
     <span class="recipe-author-item">
       <i class="fas fa-calendar-alt"></i>
-      {{ recipe.created_at|date:'d/m/Y' }} às {{ recipe.created_at|date:'H:i' }}
+      {{ recipe.created_at|date:'d/m/Y' }} at {{ recipe.created_at|date:'H:i' }}
     </span>
 
     {% if recipe.category is not None %}
@@ -46,13 +46,13 @@
 
   <div class="recipe-meta-container">
     <div class="recipe-meta recipe-preparation">
-      <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i> Preparo</h3>
+      <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i> Prep</h3>
       <div class="recipe-meta-text">
         {{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}
       </div>
     </div>
     <div class="recipe-meta recipe-servings">
-      <h3 class="recipe-meta-title"><i class="fas fa-pizza-slice"></i> Porções</h3>
+      <h3 class="recipe-meta-title"><i class="fas fa-pizza-slice"></i> Servings</h3>
       <div class="recipe-meta-text">
         {{ recipe.servings }} {{ recipe.servings_unit}}
       </div>
@@ -63,13 +63,20 @@
   <footer class="recipe-footer">
     <a class="recipe-read-more button button-dark button-full-width" href="{% url 'recipes:recipe' recipe.id %}">
       <i class="fas fa-eye"></i>
-      <span>ver mais...</span>
+      <span>Read more...</span>
     </a>
   </footer>
   {% endif %}
 
   {% if is_detail_page is True %}
+
+  <div class="ingredients">
+    <h3>Ingredients</h3>
+    {{ recipe.ingredients|linebreaksbr }}
+  </div>
+
   <div class="preparation-steps">
+    <h3>Preparations steps</h3>
     {% if recipe.preparation_steps_is_html is True %}
     {{ recipe.preparation_steps|safe }}
     {% else %}
