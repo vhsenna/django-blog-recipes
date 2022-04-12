@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
-from utils.recipes.faker import make_recipe
+# from utils.recipes.faker import make_recipe
 from recipes.models import Recipe
 
 def home(request):
