@@ -9,5 +9,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
-    list_display = ('title', 'preparation_time', 'servings', 'created_at', 'updated_at', 'is_published', 'category', 'author')
+    list_display = ('title', 'created_at', 'updated_at', 'is_published', 'category', 'author')
+    list_filter = ('is_published', 'created_at', 'updated_at', 'author')
+    prepopulated_fields = {'slug': ('title',)}
+    date_hierarchy = 'updated_at'
+    ordering = ('is_published', 'updated_at')
     searchfields = ['__all__']
